@@ -1,6 +1,5 @@
 import ContainerCard from "../components/ContainerCard";
 import InstagramButton from "../components/InstagramButton";
-import Logo from "../components/Logo";
 import PageSeo from "../components/PageSeo";
 import SectionTitle from "../components/SectionTitle";
 import { parentTips } from "../data/content";
@@ -17,7 +16,6 @@ export default function ParentsPage() {
         title="Pendampingan Orang Tua"
         description="Bagian singkat ini membantu orang tua membangun rutinitas yang konsisten dan menyenangkan bersama anak."
       />
-      <Logo className="mb-2" />
       <div className="grid gap-5 lg:grid-cols-[1fr_1fr]">
         <ContainerCard>
           <h3 className="font-display text-3xl text-brand-navy">Kenapa penting sejak dini?</h3>
