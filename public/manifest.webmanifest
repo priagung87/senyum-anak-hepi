@@ -1,0 +1,16 @@
+{
+  "name": "Senyum Anak Hepi",
+  "short_name": "Senyum Hepi",
+  "description": "Aplikasi edukasi kesehatan gigi anak dari Tami Dental Care.",
+  "theme_color": "#33C7C6",
+  "background_color": "#FFFDF8",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
