@@ -21,6 +21,7 @@ export default function GamesPage() {
     resetSortingGame,
     handleCleanSpot,
     resetCleanGame,
+    resetGameProgress,
   } = useAppProgress();
 
   return (
@@ -34,6 +35,16 @@ export default function GamesPage() {
         title="Mini Games Seru"
         description="Belajar lewat permainan sederhana yang memberi umpan balik langsung, skor, dan reward."
       />
+
+      <div className="flex justify-end">
+        <button
+          type="button"
+          onClick={resetGameProgress}
+          className="rounded-full bg-white px-5 py-3 text-sm font-black text-brand-navy shadow-playful transition hover:-translate-y-0.5 hover:bg-brand-yellow"
+        >
+          Reset Skor Game
+        </button>
+      </div>
 
       <BadgePanel badges={rewardBadges} unlockedBadges={unlockedBadges} score={score} />
 

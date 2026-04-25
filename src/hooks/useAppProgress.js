@@ -104,6 +104,16 @@ export function useAppProgress() {
     unlockBadge("Juara Senyum Bersih");
   };
 
+  const resetGameProgress = () => {
+    setScore(0);
+    setUnlockedBadges([]);
+    setFoodSelections({});
+    setFoodFeedback("");
+    setSortingItems(shuffleArray(sortingGameInitial));
+    setSortingFeedback("");
+    setCleanedSpots([]);
+  };
+
   const goodChoicesCount = useMemo(
     () => Object.values(foodSelections).filter((value) => value === "good").length,
     [foodSelections]
@@ -132,5 +142,6 @@ export function useAppProgress() {
     handleCleanSpot,
     resetCleanGame,
     awardTimerCompletion,
+    resetGameProgress,
   };
 }
