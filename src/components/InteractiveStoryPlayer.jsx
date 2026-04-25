@@ -51,6 +51,10 @@ export default function InteractiveStoryPlayer({
   };
 
   const sceneProgress = useMemo(() => `${sceneIndex + 1} dari ${story.scenes.length}`, [sceneIndex, story.scenes.length]);
+  const progressWidth = useMemo(
+    () => `${((sceneIndex + 1) / story.scenes.length) * 100}%`,
+    [sceneIndex, story.scenes.length]
+  );
 
   if (completedStories.includes(story.id) && isFinished) {
     return (
@@ -111,6 +115,12 @@ export default function InteractiveStoryPlayer({
             🔊 Dengarkan
           </button>
         </div>
+      </div>
+      <div className="mt-5 h-4 overflow-hidden rounded-full bg-brand-cream">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-brand-pink to-brand-teal transition-all duration-300"
+          style={{ width: progressWidth }}
+        />
       </div>
 
       <div className="mt-6 grid gap-4">

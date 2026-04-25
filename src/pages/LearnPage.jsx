@@ -1,5 +1,6 @@
 import InfoCard from "../components/InfoCard";
 import PageSeo from "../components/PageSeo";
+import RouteButton from "../components/RouteButton";
 import SectionTitle from "../components/SectionTitle";
 import { educationMaterials } from "../data/content";
 
@@ -15,6 +16,11 @@ export default function LearnPage() {
         title="Belajar Kesehatan Gigi"
         description="Materi pendek dan sederhana supaya anak mudah mengerti kenapa menjaga kesehatan gigi itu penting."
       />
+      <div className="mb-6 flex flex-wrap gap-3">
+        <RouteButton to="/kenali-mulut" variant="teal">
+          Kenali Gigi & Mulut
+        </RouteButton>
+      </div>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {educationMaterials.map((item, index) => (
           <InfoCard

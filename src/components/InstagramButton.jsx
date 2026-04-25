@@ -18,7 +18,7 @@ export default function InstagramButton({
         rel="noopener noreferrer"
         onClick={handleClick}
         aria-label="Instagram Tami Dental"
-        className={`group fixed bottom-24 right-4 z-40 flex h-14 w-14 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-brand-pink to-brand-teal text-2xl text-white shadow-playful md:bottom-6 ${className}`}
+        className={`group fixed right-4 z-40 flex h-14 w-14 animate-bounce items-center justify-center rounded-full bg-gradient-to-br from-brand-pink to-brand-teal text-2xl text-white shadow-playful ${className}`}
       >
         📸
         <span className="pointer-events-none absolute -top-9 right-0 rounded-full bg-white px-3 py-1 text-xs font-black text-brand-navy shadow-sm">

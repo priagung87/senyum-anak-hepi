@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import InteractiveStoriesPage from "./pages/InteractiveStoriesPage";
 import LearnPage from "./pages/LearnPage";
 import LittleKidsPage from "./pages/LittleKidsPage";
+import MouthLearningPage from "./pages/MouthLearningPage";
 import ParentsPage from "./pages/ParentsPage";
 import StoriesPage from "./pages/StoriesPage";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/cerita-interaktif" element={<InteractiveStoriesPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/aktivitas-seru" element={<FunActivitiesPage />} />
+          <Route path="/kenali-mulut" element={<MouthLearningPage />} />
           <Route path="/orang-tua" element={<ParentsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

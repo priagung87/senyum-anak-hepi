@@ -3,6 +3,7 @@ import ContainerCard from "../components/ContainerCard";
 import HeroIllustration from "../components/HeroIllustration";
 import InfoCard from "../components/InfoCard";
 import InstagramButton from "../components/InstagramButton";
+import Logo from "../components/Logo";
 import MenuCard from "../components/MenuCard";
 import PageSeo from "../components/PageSeo";
 import RouteButton from "../components/RouteButton";
@@ -22,6 +23,7 @@ export default function HomePage() {
 
       <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
+          <Logo className="mb-5" />
           <div className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-brand-pink shadow-playful">
             Tami Dental Care • IG @tamidentalcare
           </div>
@@ -43,7 +45,10 @@ export default function HomePage() {
             <RouteButton to="/games" variant="teal">
               Main Games
             </RouteButton>
-            <RouteButton to="/cerita" variant="yellow">
+            <RouteButton to="/main-balita" variant="yellow">
+              Yuk Main!
+            </RouteButton>
+            <RouteButton to="/cerita-interaktif" variant="white">
               Baca Cerita
             </RouteButton>
           </div>

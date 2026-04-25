@@ -1,35 +1,36 @@
-import { NavLink } from "react-router-dom";
-import { navItems } from "../data/content";
+import { Link, useLocation } from "react-router-dom";
+import Logo from "./Logo";
 
 export default function NavBar() {
+  const { pathname } = useLocation();
+  const items = [
+    { label: "Home", href: "/", match: ["/"] },
+    { label: "Main", href: "/main-balita", match: ["/main-balita", "/games", "/aktivitas-seru", "/sikat-gigi"] },
+    { label: "Cerita", href: "/cerita-interaktif", match: ["/cerita", "/cerita-interaktif"] },
+    { label: "Belajar", href: "/belajar", match: ["/belajar", "/kenali-mulut"] },
+    { label: "Orang Tua", href: "/orang-tua", match: ["/orang-tua"] },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/60 bg-brand-cream/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <NavLink to="/" className="flex items-center gap-3 text-left">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-teal text-2xl shadow-playful">
-            😁
-          </div>
-          <div>
-            <p className="font-display text-xl leading-none text-brand-navy">Senyum Anak Hepi</p>
-            <p className="text-xs font-bold text-slate-500">Tami Dental Care</p>
-          </div>
-        </NavLink>
+        <Link to="/" className="text-left">
+          <Logo compact />
+        </Link>
 
-        <nav className="hidden flex-wrap items-center justify-end gap-2 md:flex">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.id}
+        <nav className="hidden flex-wrap items-center justify-end gap-2 lg:flex">
+          {items.map((item) => (
+            <Link
+              key={item.href}
               to={item.href}
-              className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-sm font-bold transition hover:-translate-y-0.5 ${
-                  isActive
-                    ? "bg-brand-pink text-white shadow-playful"
-                    : "bg-white text-brand-navy hover:bg-brand-yellow"
-                }`
-              }
+              className={`rounded-full px-4 py-2 text-sm font-bold transition hover:-translate-y-0.5 ${
+                item.match.includes(pathname)
+                  ? "bg-brand-pink text-white shadow-playful"
+                  : "bg-white text-brand-navy hover:bg-brand-yellow"
+              }`}
             >
-                {item.icon} {item.label}
-            </NavLink>
+              {item.label}
+            </Link>
           ))}
         </nav>
       </div>

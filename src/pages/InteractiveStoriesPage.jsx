@@ -65,7 +65,9 @@ export default function InteractiveStoriesPage() {
             >
               <p className="text-6xl">{story.emoji}</p>
               <h3 className="mt-4 font-display text-3xl text-brand-navy">{story.title}</h3>
-              <p className="mt-2 text-sm font-bold text-slate-500">{story.age}</p>
+              <p className="mt-2 text-sm font-bold text-slate-500">
+                {story.age} • {story.scenes.length} scene
+              </p>
               <p className="mt-3 text-sm font-bold text-brand-pink">
                 {completedStories.includes(story.id) ? "Sudah selesai ⭐" : "Yuk dengarkan!"}
               </p>

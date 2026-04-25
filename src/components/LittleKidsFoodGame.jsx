@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import InstagramButton from "./InstagramButton";
 import { speak } from "../utils/speech";
 
 const foodPairs = [
@@ -93,16 +94,19 @@ export default function LittleKidsFoodGame({ onAddScore }) {
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
         <p className="text-lg font-black text-brand-pink">{feedback || "Yuk Main!"}</p>
-        <button
-          type="button"
-          onClick={() => {
-            setFeedback("");
-            setPairIndex(isLast ? 0 : pairIndex + 1);
-          }}
-          className="min-h-14 rounded-full bg-brand-teal px-5 py-3 text-sm font-black text-white"
-        >
-          {isLast ? "Main Lagi" : "Berikutnya"}
-        </button>
+        <div className="flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              setFeedback("");
+              setPairIndex(isLast ? 0 : pairIndex + 1);
+            }}
+            className="min-h-14 rounded-full bg-brand-teal px-5 py-3 text-sm font-black text-white"
+          >
+            {isLast ? "Main Lagi" : "Berikutnya"}
+          </button>
+          {isLast && feedback ? <InstagramButton text="Mau lihat tips lainnya?" /> : null}
+        </div>
       </div>
     </div>
   );

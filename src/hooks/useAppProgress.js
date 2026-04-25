@@ -27,6 +27,7 @@ export function useAppProgress() {
   const [storyStars, setStoryStars] = useLocalStorage("sah-story-stars", 0);
   const [completedStories, setCompletedStories] = useLocalStorage("sah-completed-stories", []);
   const [activityStars, setActivityStars] = useLocalStorage("sah-activity-stars", 0);
+  const [mouthQuizStars, setMouthQuizStars] = useLocalStorage("sah-mouth-quiz-stars", 0);
   const [dailyMission, setDailyMission] = useLocalStorage("sah-daily-mission", defaultDailyMission);
   const [funSessionCount, setFunSessionCount] = useLocalStorage("sah-fun-session-count", 0);
 
@@ -136,6 +137,10 @@ export function useAppProgress() {
     setLittleKidsScore((current) => current + amount);
   };
 
+  const addScore = (amount) => {
+    setScore((current) => current + amount);
+  };
+
   const resetLittleKidsProgress = () => {
     setLittleKidsScore(0);
     setLittleKidsBadges([]);
@@ -173,6 +178,10 @@ export function useAppProgress() {
     setActivityStars((current) => current + amount);
   };
 
+  const addMouthQuizStars = (amount) => {
+    setMouthQuizStars((current) => current + amount);
+  };
+
   const incrementFunSessionCount = () => {
     setFunSessionCount((current) => current + 1);
   };
@@ -181,6 +190,14 @@ export function useAppProgress() {
     setActivityStars(0);
     setDailyMission(defaultDailyMission);
     setFunSessionCount(0);
+  };
+
+  const resetProgress = () => {
+    resetGameProgress();
+    resetLittleKidsProgress();
+    resetStoryProgress();
+    resetActivityProgress();
+    setMouthQuizStars(0);
   };
 
   const goodChoicesCount = useMemo(
@@ -216,6 +233,7 @@ export function useAppProgress() {
     storyStars,
     completedStories,
     activityStars,
+    mouthQuizStars,
     dailyMission,
     funSessionCount,
     completedMissionCount,
@@ -231,6 +249,7 @@ export function useAppProgress() {
     resetCleanGame,
     awardTimerCompletion,
     resetGameProgress,
+    addScore,
     addLittleKidsScore,
     addLittleKidsBadge,
     resetLittleKidsProgress,
@@ -238,8 +257,10 @@ export function useAppProgress() {
     completeStory,
     toggleDailyMission,
     addActivityStars,
+    addMouthQuizStars,
     incrementFunSessionCount,
     resetStoryProgress,
     resetActivityProgress,
+    resetProgress,
   };
 }

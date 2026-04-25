@@ -1,19 +1,7 @@
-export const navItems = [
-  { id: "home", label: "Home", icon: "🏠", href: "/" },
-  { id: "main-balita", label: "Main Balita", icon: "🧸", href: "/main-balita" },
-  { id: "belajar", label: "Belajar", icon: "🦷", href: "/belajar" },
-  { id: "sikat", label: "Sikat Gigi", icon: "🪥", href: "/sikat-gigi" },
-  { id: "cerita", label: "Cerita", icon: "📚", href: "/cerita" },
-  { id: "cerita-interaktif", label: "Cerita Interaktif", icon: "🎧", href: "/cerita-interaktif" },
-  { id: "games", label: "Games", icon: "🎮", href: "/games" },
-  { id: "aktivitas-seru", label: "Aktivitas Seru", icon: "🌟", href: "/aktivitas-seru" },
-  { id: "orangtua", label: "Orang Tua", icon: "👨‍👩‍👧", href: "/orang-tua" },
-];
-
 export const heroStats = [
   { label: "Materi Seru", value: "5+" },
-  { label: "Mini Games", value: "3" },
-  { label: "Kebiasaan Baik", value: "2x sehari" },
+  { label: "Main Balita", value: "5" },
+  { label: "Kebiasaan Baik", value: "10-20 menit" },
 ];
 
 export const mainMenus = [
@@ -72,6 +60,14 @@ export const mainMenus = [
     description: "Isi waktu 10-20 menit dengan misi harian, gerakan lucu, dan sesi bermain.",
     icon: "🌟",
     accent: "bg-lime-100",
+  },
+  {
+    id: "kenali-mulut",
+    href: "/kenali-mulut",
+    title: "Kenali Gigi & Mulut",
+    description: "Belajar nama gigi dan bagian mulut lewat kartu lucu dan quiz tap sederhana.",
+    icon: "👄",
+    accent: "bg-rose-100",
   },
 ];
 

@@ -1,5 +1,6 @@
 import DailyMission from "../components/DailyMission";
 import EasyBrushSequence from "../components/EasyBrushSequence";
+import InstagramButton from "../components/InstagramButton";
 import MovementCards from "../components/MovementCards";
 import PageSeo from "../components/PageSeo";
 import SectionTitle from "../components/SectionTitle";
@@ -55,6 +56,14 @@ export default function FunActivitiesPage() {
           onAddStars={addActivityStars}
           onIncrementSession={incrementFunSessionCount}
         />
+      </div>
+
+      <div className="rounded-[2rem] bg-white p-6 shadow-playful">
+        <p className="font-display text-3xl text-brand-navy">Mau lihat tips lainnya?</p>
+        <p className="mt-2 text-sm font-bold text-slate-600">Follow IG Tami Dental ya!</p>
+        <div className="mt-4">
+          <InstagramButton text="Follow IG Tami Dental ya!" />
+        </div>
       </div>
     </div>
   );

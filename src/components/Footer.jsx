@@ -1,8 +1,10 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   return (
     <footer className="mt-16 rounded-t-[2.5rem] bg-brand-navy text-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 sm:px-6 lg:px-8">
-        <p className="font-display text-2xl">Tami Dental Care</p>
+        <Logo className="[&_p:first-child]:text-white [&_p:last-child]:text-brand-yellow" />
         <a
           href="https://instagram.com/tamidentalcare"
           target="_blank"
