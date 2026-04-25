@@ -2,6 +2,7 @@ import BadgePanel from "../components/BadgePanel";
 import ContainerCard from "../components/ContainerCard";
 import HeroIllustration from "../components/HeroIllustration";
 import InfoCard from "../components/InfoCard";
+import InstagramButton from "../components/InstagramButton";
 import MenuCard from "../components/MenuCard";
 import PageSeo from "../components/PageSeo";
 import RouteButton from "../components/RouteButton";
@@ -97,6 +98,15 @@ export default function HomePage() {
         </ContainerCard>
 
         <BadgePanel badges={rewardBadges} unlockedBadges={unlockedBadges} score={score} />
+      </section>
+
+      <section className="rounded-[2rem] bg-white p-6 shadow-playful">
+        <SectionTitle
+          eyebrow="Instagram Tami Dental"
+          title="Yuk Ikuti Tami Dental!"
+          description="Banyak tips gigi sehat, promo, dan konten seru untuk anak & orang tua."
+        />
+        <InstagramButton text="Ikuti Instagram" />
       </section>
     </div>
   );

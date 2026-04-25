@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import InstagramButton from "./InstagramButton";
 import MobileNav from "./MobileNav";
 import NavBar from "./NavBar";
 import ScrollToTop from "./ScrollToTop";
@@ -16,6 +17,7 @@ export default function AppShell() {
         </section>
       </main>
       <Footer />
+      <InstagramButton floating />
       <MobileNav />
     </div>
   );

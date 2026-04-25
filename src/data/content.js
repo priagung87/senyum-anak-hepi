@@ -1,9 +1,12 @@
 export const navItems = [
   { id: "home", label: "Home", icon: "🏠", href: "/" },
+  { id: "main-balita", label: "Main Balita", icon: "🧸", href: "/main-balita" },
   { id: "belajar", label: "Belajar", icon: "🦷", href: "/belajar" },
   { id: "sikat", label: "Sikat Gigi", icon: "🪥", href: "/sikat-gigi" },
   { id: "cerita", label: "Cerita", icon: "📚", href: "/cerita" },
+  { id: "cerita-interaktif", label: "Cerita Interaktif", icon: "🎧", href: "/cerita-interaktif" },
   { id: "games", label: "Games", icon: "🎮", href: "/games" },
+  { id: "aktivitas-seru", label: "Aktivitas Seru", icon: "🌟", href: "/aktivitas-seru" },
   { id: "orangtua", label: "Orang Tua", icon: "👨‍👩‍👧", href: "/orang-tua" },
 ];
 
@@ -46,7 +49,33 @@ export const mainMenus = [
     icon: "🎲",
     accent: "bg-sky-100",
   },
+  {
+    id: "main-balita",
+    href: "/main-balita",
+    title: "Main Balita",
+    description: "Tap yang sederhana, suara panduan, dan mini game yang cocok untuk anak kecil.",
+    icon: "🧸",
+    accent: "bg-orange-100",
+  },
+  {
+    id: "cerita-interaktif",
+    href: "/cerita-interaktif",
+    title: "Cerita Interaktif",
+    description: "Dengar cerita singkat, pilih jawaban, dan bantu tokoh gigi sehat.",
+    icon: "🎧",
+    accent: "bg-violet-100",
+  },
+  {
+    id: "aktivitas-seru",
+    href: "/aktivitas-seru",
+    title: "Aktivitas Seru",
+    description: "Isi waktu 10-20 menit dengan misi harian, gerakan lucu, dan sesi bermain.",
+    icon: "🌟",
+    accent: "bg-lime-100",
+  },
 ];
+
+export const instagramLink = "https://instagram.com/tamidentalcare";
 
 export const educationMaterials = [
   {

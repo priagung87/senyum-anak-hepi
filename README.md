@@ -15,6 +15,10 @@ Aplikasi web edukasi kesehatan gigi anak dari Tami Dental Care. Project ini dibu
 - Routing per halaman agar lebih rapi untuk deploy
 - Progres lokal tersimpan di browser dengan `localStorage`
 - Konfigurasi deploy untuk Netlify dan Vercel
+- Main Balita untuk anak usia 3-5 tahun
+- Cerita interaktif dengan voice guide berbasis Web Speech API
+- Aktivitas seru 10-20 menit untuk pendampingan orang tua
+- Tombol Instagram Tami Dental yang muncul global dan CTA di halaman penting
 
 ## Struktur Folder
 
@@ -29,8 +33,13 @@ senyum-anak-hepi/
 │   │   ├── Footer.jsx
 │   │   ├── HeroIllustration.jsx
 │   │   ├── InfoCard.jsx
+│   │   ├── InstagramButton.jsx
+│   │   ├── InteractiveStoryPlayer.jsx
+│   │   ├── LittleKidsBrushGame.jsx
+│   │   ├── LittleKidsFoodGame.jsx
 │   │   ├── MenuCard.jsx
 │   │   ├── MobileNav.jsx
+│   │   ├── MovementCards.jsx
 │   │   ├── NavBar.jsx
 │   │   ├── PageSeo.jsx
 │   │   ├── RouteButton.jsx
@@ -38,23 +47,32 @@ senyum-anak-hepi/
 │   │   ├── SectionTitle.jsx
 │   │   ├── StepGuide.jsx
 │   │   ├── StoryCard.jsx
+│   │   ├── DailyMission.jsx
+│   │   ├── EasyBrushSequence.jsx
+│   │   ├── TenMinutePlaySession.jsx
 │   │   └── TimerCard.jsx
 │   ├── data/
 │   │   └── content.js
+│   │   ├── funActivities.js
+│   │   └── interactiveStories.js
 │   ├── hooks/
 │   │   ├── useAppProgress.js
 │   │   ├── useLocalStorage.js
 │   │   └── useToothbrushTimer.js
 │   ├── pages/
 │   │   ├── BrushPage.jsx
+│   │   ├── FunActivitiesPage.jsx
 │   │   ├── GamesPage.jsx
 │   │   ├── HomePage.jsx
+│   │   ├── InteractiveStoriesPage.jsx
 │   │   ├── LearnPage.jsx
+│   │   ├── LittleKidsPage.jsx
 │   │   ├── NotFoundPage.jsx
 │   │   ├── ParentsPage.jsx
 │   │   └── StoriesPage.jsx
 │   ├── utils/
-│   │   └── gameHelpers.js
+│   │   ├── gameHelpers.js
+│   │   └── speech.js
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
@@ -115,4 +133,6 @@ Project ini siap untuk deploy sebagai SPA statis.
 - Project ini belum memakai backend.
 - Semua interaksi game, timer, skor, dan badge menggunakan local state.
 - Versi ini sudah memakai React Router dan lebih siap untuk deploy sebagai SPA.
+- Fitur suara memakai Web Speech API bawaan browser tanpa package tambahan.
+- Fitur baru tetap menjaga route lama seperti edukasi, timer sikat gigi, games lama, dan cerita lama.
 - Jika ingin tahap berikutnya, project ini bisa ditambahkan backend, autentikasi orang tua, atau dashboard admin konten.

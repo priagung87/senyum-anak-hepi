@@ -1,7 +1,13 @@
 import { useMemo } from "react";
 import { brushingSteps, sortingGameInitial, stainSpots } from "../data/content";
+import { dailyMissionItems, funSessionActivities } from "../data/funActivities";
 import { shuffleArray } from "../utils/gameHelpers";
 import { useLocalStorage } from "./useLocalStorage";
+
+const defaultDailyMission = dailyMissionItems.reduce((accumulator, item) => {
+  accumulator[item.id] = false;
+  return accumulator;
+}, {});
 
 export function useAppProgress() {
   const [score, setScore] = useLocalStorage("sah-score", 0);
@@ -16,8 +22,20 @@ export function useAppProgress() {
   const [sortingFeedback, setSortingFeedback] = useLocalStorage("sah-sorting-feedback", "");
   const [cleanedSpots, setCleanedSpots] = useLocalStorage("sah-cleaned-spots", []);
 
+  const [littleKidsScore, setLittleKidsScore] = useLocalStorage("sah-little-kids-score", 0);
+  const [littleKidsBadges, setLittleKidsBadges] = useLocalStorage("sah-little-kids-badges", []);
+  const [storyStars, setStoryStars] = useLocalStorage("sah-story-stars", 0);
+  const [completedStories, setCompletedStories] = useLocalStorage("sah-completed-stories", []);
+  const [activityStars, setActivityStars] = useLocalStorage("sah-activity-stars", 0);
+  const [dailyMission, setDailyMission] = useLocalStorage("sah-daily-mission", defaultDailyMission);
+  const [funSessionCount, setFunSessionCount] = useLocalStorage("sah-fun-session-count", 0);
+
   const unlockBadge = (badgeName) => {
     setUnlockedBadges((current) => (current.includes(badgeName) ? current : [...current, badgeName]));
+  };
+
+  const addLittleKidsBadge = (badge) => {
+    setLittleKidsBadges((current) => (current.includes(badge) ? current : [...current, badge]));
   };
 
   const moveToNextStep = () => {
@@ -114,12 +132,73 @@ export function useAppProgress() {
     setCleanedSpots([]);
   };
 
+  const addLittleKidsScore = (amount) => {
+    setLittleKidsScore((current) => current + amount);
+  };
+
+  const resetLittleKidsProgress = () => {
+    setLittleKidsScore(0);
+    setLittleKidsBadges([]);
+  };
+
+  const addStoryStars = (amount) => {
+    setStoryStars((current) => current + amount);
+  };
+
+  const completeStory = (storyId) => {
+    setCompletedStories((current) => (current.includes(storyId) ? current : [...current, storyId]));
+  };
+
+  const resetStoryProgress = () => {
+    setStoryStars(0);
+    setCompletedStories([]);
+  };
+
+  const toggleDailyMission = (itemId) => {
+    setDailyMission((current) => {
+      if (current[itemId]) {
+        return current;
+      }
+
+      const nextValue = !current[itemId];
+      const next = { ...current, [itemId]: nextValue };
+      if (nextValue) {
+        setActivityStars((stars) => stars + 1);
+      }
+      return next;
+    });
+  };
+
+  const addActivityStars = (amount) => {
+    setActivityStars((current) => current + amount);
+  };
+
+  const incrementFunSessionCount = () => {
+    setFunSessionCount((current) => current + 1);
+  };
+
+  const resetActivityProgress = () => {
+    setActivityStars(0);
+    setDailyMission(defaultDailyMission);
+    setFunSessionCount(0);
+  };
+
   const goodChoicesCount = useMemo(
     () => Object.values(foodSelections).filter((value) => value === "good").length,
     [foodSelections]
   );
 
   const cleanGameComplete = cleanedSpots.length === stainSpots.length;
+
+  const completedMissionCount = useMemo(
+    () => Object.values(dailyMission).filter(Boolean).length,
+    [dailyMission]
+  );
+
+  const remainingFunActivities = useMemo(
+    () => funSessionActivities.length,
+    []
+  );
 
   return {
     score,
@@ -132,6 +211,15 @@ export function useAppProgress() {
     cleanedSpots,
     cleanGameComplete,
     goodChoicesCount,
+    littleKidsScore,
+    littleKidsBadges,
+    storyStars,
+    completedStories,
+    activityStars,
+    dailyMission,
+    funSessionCount,
+    completedMissionCount,
+    remainingFunActivities,
     unlockBadge,
     moveToNextStep,
     resetSteps,
@@ -143,5 +231,15 @@ export function useAppProgress() {
     resetCleanGame,
     awardTimerCompletion,
     resetGameProgress,
+    addLittleKidsScore,
+    addLittleKidsBadge,
+    resetLittleKidsProgress,
+    addStoryStars,
+    completeStory,
+    toggleDailyMission,
+    addActivityStars,
+    incrementFunSessionCount,
+    resetStoryProgress,
+    resetActivityProgress,
   };
 }

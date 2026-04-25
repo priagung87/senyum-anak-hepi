@@ -1,4 +1,5 @@
 import ContainerCard from "../components/ContainerCard";
+import InstagramButton from "../components/InstagramButton";
 import PageSeo from "../components/PageSeo";
 import SectionTitle from "../components/SectionTitle";
 import { parentTips } from "../data/content";
@@ -45,6 +46,18 @@ export default function ParentsPage() {
           </div>
         </div>
       </div>
+
+      <ContainerCard className="mt-6">
+        <h3 className="font-display text-3xl text-brand-navy">Follow Tami Dental</h3>
+        <div className="mt-4 grid gap-3 text-sm font-bold text-slate-700">
+          <p>• Edukasi kesehatan gigi anak</p>
+          <p>• Promo perawatan</p>
+          <p>• Tips parenting ringan</p>
+        </div>
+        <div className="mt-5">
+          <InstagramButton text="Kunjungi Instagram" />
+        </div>
+      </ContainerCard>
     </section>
   );
 }
